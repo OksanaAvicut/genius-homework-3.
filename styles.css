@@ -1,0 +1,132 @@
+/* Глобальні налаштування */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Play', sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Переходи */
+a, button, input, .icon {
+  transition: all 0.2s ease;
+}
+
+a:hover {
+  color: #2b7fff;
+}
+
+button:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+input:focus {
+  border-color: #2b7fff;
+  box-shadow: 0 0 5px rgba(43, 127, 255, 0.5);
+}
+
+/* Стилі для полів вводу (унікальні ID) */
+#contact-name,
+#contact-phone,
+#contact-email,
+#modal-name,
+#modal-phone,
+#modal-email {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+/* Абсолютне позиціонування зірочок */
+.star {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: url('./images/star.svg') no-repeat center/contain;
+}
+
+.star-1 {
+  top: 20%;
+  left: 10%;
+}
+
+.star-2 {
+  bottom: 30%;
+  right: 15%;
+}
+
+/* Анімація зірочок */
+@keyframes rotateAndScale {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  50% {
+    transform: rotate(180deg) scale(1.2);
+  }
+  100% {
+    transform: rotate(360deg) scale(1);
+  }
+}
+
+.star {
+  animation: rotateAndScale 5s infinite linear;
+}
+
+/* Модальне вікно */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  position: relative;
+  max-width: 400px;
+  width: 100%;
+}
+
+.close-modal {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* Фонове зображення у підвалі */
+.footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('./images/footer-bg.jpg') no-repeat center/cover;
+  opacity: 0.2;
+  z-index: -1;
+}
